@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 export default class BaseContainer extends mesh.NineSlicePlane {
   constructor(config, path) {
-    let cfg = config;
+    let cfg = path ? _.get(config, path) : config;
 
     if (path) {
       cfg = _.extends(
@@ -16,7 +16,7 @@ export default class BaseContainer extends mesh.NineSlicePlane {
           x: 0,
           y: 0
         },
-        _.get(config, path)
+        cfg
       );
     }
 

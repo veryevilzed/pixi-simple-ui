@@ -6,7 +6,7 @@ import { State } from 'smart-animator';
 
 export default class Button extends BaseContainer {
   constructor(config, path) {
-    let cfg = config;
+    let cfg = path ? _.get(config, path) : config;
 
     if (path) {
       cfg = _.extends(
@@ -29,7 +29,7 @@ export default class Button extends BaseContainer {
             disable: {state: {from: {tint: 0x555555}, time: 0}}
           }
         },
-        _.get(config, path)
+        cfg
       );
     }
 
