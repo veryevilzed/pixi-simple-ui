@@ -1,0 +1,48 @@
+{
+  "name": "pixi-simple-ui",
+  "version": "1.0.0",
+  "description": "Simple ui for PIXI",
+  "main": "lib/pixi-simple-ui.js",
+  "scripts": {
+    "build": "webpack --env dev && webpack --env build && npm run test",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/veryevilzed/"
+  },
+  "keywords": [
+    "webpack",
+    "es6",
+    "starter",
+    "library",
+    "universal",
+    "umd",
+    "commonjs"
+  ],
+  "author": "Dmitry Vysochin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/veryevilzed/"
+  },
+  "homepage": "https://github.com/veryevilzed/",
+  "dependencies": {
+    "pixi.js": "^4.7.0",
+    "lodash": "latest",
+    "smart-animator": "git://github.com/veryevilzed/SmartAnimator.git"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.13.1",
+    "eslint-loader": "^1.9.0",
+    "jest": "^22.4.2",
+    "webpack": "^3.10.0",
+    "yargs": "^10.0.3"
+  }
+}
