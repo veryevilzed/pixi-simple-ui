@@ -6,28 +6,32 @@ import { State } from 'smart-animator';
 
 export default class Button extends BaseContainer {
   constructor(config, path) {
-    const cfg = _.extends(
-      {
-        name: 'button',
-        texts: {
-          main: {
-            value: 'Button',
-            dx: 0,
-            dy: 0,
-            style: {
-              fontFamily: 'Arial', fontSize: 24, fill: 0xff1010, align: 'center'
+    let cfg = config;
+
+    if (path) {
+      cfg = _.extends(
+        {
+          name: 'button',
+          texts: {
+            main: {
+              value: 'Button',
+              dx: 0,
+              dy: 0,
+              style: {
+                fontFamily: 'Arial', fontSize: 24, fill: 0xff1010, align: 'center'
+              }
             }
+          },
+          states: {
+            release: {state: {from: {tint: 0xFFFFFF}, time: 0}},
+            over: {state: {from: {tint: 0xFF00FF}, time: 0}},
+            press: {state: {from: {tint: 0xFF0000}, time: 0}},
+            disable: {state: {from: {tint: 0x555555}, time: 0}}
           }
         },
-        states: {
-          release: { state: { from: { tint: 0xFFFFFF }, time: 0 } },
-          over: { state: { from: { tint: 0xFF00FF }, time: 0 } },
-          press: { state: { from: { tint: 0xFF0000 }, time: 0 } },
-          disable: { state: { from: { tint: 0x555555 }, time: 0 } }
-        }
-      },
-      _.get(config, path)
-    );
+        _.get(config, path)
+      );
+    }
 
     super(cfg, path);
     this.texts = {};
